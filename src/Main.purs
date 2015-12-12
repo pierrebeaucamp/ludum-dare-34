@@ -7,7 +7,7 @@ import Data.Matrix (toArray)
 import Data.Matrix4 (identity, makePerspective, translate)
 import Data.Vector3 (vec3)
 import Graphics.WebGLAll
-import Prelude
+import Prelude ((/), bind, negate, Unit())
 
 shaders :: Shaders {
     aVertexPosition :: Attribute Vec3,
@@ -36,7 +36,7 @@ shaders = Shaders
 main :: Eff (console :: CONSOLE) Unit
 main = runWebGL "glcanvas" (\s -> log s) \ context -> do
     withShaders shaders (\s -> log s) \ bindings -> do
-        clearColor 0.0 0.0 0.0 1.0
+        clearColor 0.17 0.47 0.24 1.0
         enable DEPTH_TEST
 
         canvasWidth <- getCanvasWidth context

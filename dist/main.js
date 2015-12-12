@@ -1460,7 +1460,7 @@ var PS = { };
           return Control_Monad_Eff_Console.log(s);
       })(function (bindings) {
           return function __do() {
-              Graphics_WebGL.clearColor(0.0)(0.0)(0.0)(1.0)();
+              Graphics_WebGL.clearColor(0.16999999999999998)(0.47000000000000003)(0.24)(1.0)();
               Graphics_WebGL.enable(Graphics_WebGL.DEPTH_TEST.value)();
               var _2 = Graphics_WebGL.getCanvasWidth(context)();
               var _1 = Graphics_WebGL.getCanvasHeight(context)();
