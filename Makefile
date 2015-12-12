@@ -1,11 +1,10 @@
 default: build
-build: dist/main.js
+build: clean dist/main.js
 
 clean:
-	rm -rf dist bower_components node_modules .psci_modules output
+	rm -rf dist
 
 dist/main.js:
-	rm -rf dist
 	mkdir dist
 	pulp build -O
 	psc-bundle output/**/*.js -m LudumDare -o dist/main.js
