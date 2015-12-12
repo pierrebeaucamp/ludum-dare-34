@@ -3,7 +3,6 @@ module LudumDare where
 import Control.Monad.Eff (Eff())
 import Control.Monad.Eff.Console (CONSOLE(), log)
 import Control.Monad.Eff.WebGL (EffWebGL())
-import Data.ArrayBuffer.Types (Float32())
 import Data.Date (now, Now(), toEpochMilliseconds)
 import Data.Maybe
 import Graphics.WebGL
@@ -13,7 +12,6 @@ import Shader
 
 type State = {
     aPosition   :: Attribute Vec2,
-    buf         :: Buffer Float32,
     context     :: WebGLContext,
     lastTime    :: Maybe Number,
     uModelView  :: Uniform Mat4,
@@ -34,15 +32,8 @@ main = runWebGL "glcanvas" (\s -> log s) \ context -> do
         disable DEPTH_TEST
         disable CULL_FACE
 
-        buf <- makeBufferFloat [
-            0.0, 1.0, 0.0,
-            (-1.0), (-1.0), 0.0,
-            1.0, (-1.0), 0.0
-        ]
-
         gameLoop {
             aPosition: bindings.aPosition,
-            buf: buf,
             context: context,
             lastTime: Nothing,
             uModelView: bindings.uModelView,
