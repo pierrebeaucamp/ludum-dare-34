@@ -137,6 +137,4 @@ var PS = { };
   });
   exports["main"] = main;;
  
-})(PS["Main"] = PS["Main"] || {});
-
-PS["Main"].main();
+})(PS["LudumDare"] = PS["LudumDare"] || {});
