@@ -12,3 +12,8 @@ src/.webpack.js
 *.un~
 Session.vim
 .netrwhist
+
+### development files ###
+src/Main.purs
+index.html
+*.webpack.js
